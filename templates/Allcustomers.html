@@ -1,0 +1,155 @@
+{{ define "Allcustomers" }}
+{{ template "Header" }}
+<div class="container">
+  <!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th {
+      text-align: center;
+      padding: 8px;
+      border: 1px solid black;
+      width: 20%;
+    }
+
+    td {
+      text-align: left;
+      padding: 8px;
+      border: 1px solid black;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+      border: 1px solid black;
+    }
+
+    h1 {
+      font-family: arial, sans-serif;
+      font-size: 40px;
+      text-align: center;
+    }    
+    .button {
+      background-color: #DCB8B0;
+      border: none;
+      color: black;
+      padding: 10px 22px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      font-family: arial, sans-serif;
+    }
+
+    .button:hover{
+        opacity: 1;
+    }
+
+    input {
+      width: 19%;
+      padding: 10px;
+      margin: 5px 20px 10px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+    }
+
+    p {
+      font-family: arial, sans-serif;
+      text-align: center;
+      font-size: 20px;
+    }
+
+    </style>
+</head>
+<body>
+    <form method="GET" action="allcustomers"></form>
+    <p>To filter by specific column press on header.</p>
+    <input id="search" type="text" placeholder="Search by first or last name...">
+    <table id="table" class="searchable sortable">
+      <thead>
+      <tr bgcolor="#DCB8B0" class="tableheader">
+        <th onclick="sortTable(0)">First name</th>
+        <th onclick="sortTable(1)">Last name</th>
+        <th onclick="sortTable(2)">Country</th>
+        <th onclick="sortTable(3)">Birth date</th>
+        <th onclick="sortTable(4)" style="width: min-content;">Gender</th>
+        <th colspan="3">Settings</th>
+      </tr>
+      </thead>
+      <tbody>
+      {{ range . }}
+      <tr>
+        <td>{{ .Firstname }}</td>
+        <td>{{ .Lastname }}</td>
+        <td>{{ .Country }}</td>
+        <td>{{ .Birth.Format "02 January 2006" }}</td>
+        <td>{{ .Gender }}</td>
+        <td style="width:50px"><a href="/delete?id={{ .ID }}">Delete</td>
+        <td style="width:50px"><a href="/alldata?id={{ .ID }}">View</td>
+        <td style="width:50px"><a href="/edit?id={{ .ID }}">Edit</a></td>
+      </tr>
+      {{ end }}
+      </tbody>
+  </table>
+  <script>
+    function sortTable(n) {
+      var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+      table = document.getElementById("table");
+      switching = true;
+      dir = "asc"; 
+      while (switching) {
+        switching = false;
+        rows = table.rows;
+        for (i = 1; i < (rows.length - 1); i++) {
+          shouldSwitch = false;
+          x = rows[i].getElementsByTagName("TD")[n];
+          y = rows[i + 1].getElementsByTagName("TD")[n];
+          if (dir == "asc") {
+            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+              shouldSwitch= true;
+              break;
+            }
+          } else if (dir == "desc") {
+            if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+              shouldSwitch = true;
+              break;
+            }
+          }
+        }
+        if (shouldSwitch) {
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+          switchcount ++;      
+        } else {
+          if (switchcount == 0 && dir == "asc") {
+            dir = "desc";
+            switching = true;
+          }
+        }
+      }
+    }
+    </script>
+    <script>
+      var $rows = $('#table tbody tr');
+      $('#search').keyup(function() {
+        var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();  
+        $rows.show().filter(function() {
+          var text = $(this).find('td:eq(0),td:eq(1)').text().replace(/\s+/g, ' ').toLowerCase();
+          return !~text.indexOf(val);
+        }).hide();
+    });
+    </script>
+  </div>
+  <a class="button" href="/page?id=1">1</a><a class="button" href="/page?id=2">2</a><a class="button" href="/page?id=3">3</a><a class="button" href="/page?id=4">4</a><a class="button" href="/page?id=5">5</a>
+</body>
+</html>
+{{ end }}

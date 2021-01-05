@@ -1,0 +1,66 @@
+{{ define "Alldata" }}
+{{ template "Header" }}
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .container {
+      padding: 16px;
+      background-color: white;
+    }
+
+    hr {
+      border: 1px solid #f1f1f1;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      background-color: #DCB8B0;
+      color: black;
+      padding: 16px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 40%;
+      opacity: 0.9;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      opacity: 1;
+    }
+
+    </style>
+  </head>
+<body>
+
+<form method="POST" action="update">
+  <div class="container">
+    <h1>Customer information.</h1>
+    <p>All available data regarding customer <b>#{{ .ID }}</b></p>
+    <hr>
+    <input type="hidden" name="id" value="{{ .ID }}" />
+
+    <p><label><b>First name: </b></label>{{ .Firstname }}</p>
+    <p><label><b>Last name: </b></label>{{ .Lastname }}</p>
+    <p><label><b>Gender: </b></label>{{ .Gender }}</p>
+    <p><label><b>E-mail: </b></label>{{ .Email }}</p>
+    <p><label><b>Address: </b></label>{{ .Address }}</p>
+    <p><label><b>Country: </b></label>{{ .Country }}</p>
+    <p><label><b>Drivers licence: </b></label>{{ .Licence }}</p>
+    <p><label><b>Born on: </b></label><time datetime="YYYY-MM-DD">{{ .Birth.Format "02 January 2006" }}</time></p>
+
+    <hr>
+    <a href="/edit?id={{ .ID }}" class="btn">Edit</a> <a href="/delete?id={{ .ID }}" class="btn">Delete</a>
+  </div>
+</form>
+
+</body>
+</html>
+{{ end }}

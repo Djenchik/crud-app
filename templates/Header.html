@@ -1,0 +1,29 @@
+{{ define "Header" }}
+<!doctype html>
+<html>
+    <head>
+        <style>
+            .button {
+                background-color: #DCB8B0;
+                border: none;
+                color: black;
+                padding: 10px 22px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                font-family: arial, sans-serif;
+                }
+
+            .button:hover{
+                opacity: 1;
+            }
+        </style>
+        <a href="/" class="button">Home</a>
+        <a href="/New" class="button">New customer</a>
+        <a href="/page?id=1" class="button">All customers</a>
+    </head>
+</html>
+{{ end }}
