@@ -9,16 +9,16 @@ create table customers (
 	licence VARCHAR(3),
 	birth DATE NOT NULL
 );
-insert into customers (firstname, lastname, gender, email, address, country, licence, birth) values (1, 'Brennan', 'Creany', 'Male', 'bcreany0@phpbb.com', '83 Ohio Plaza', 'France', 'Yes', '17/02/1984');
-insert into customers (firstname, lastname, gender, email, address, country, licence, birth) values (2, 'Nathanael', 'Stickland', 'Male', 'nstickland1@github.io', '86 Florence Road', 'Russia', 'No', '25/06/1978');
-insert into customers (firstname, lastname, gender, email, address, country, licence, birth) values (3, 'Bendick', 'Biggadyke', 'Male', 'bbiggadyke2@umn.edu', '9 Macpherson Crossing', 'Brazil', 'No', '30/08/1964');
-insert into customers (firstname, lastname, gender, email, address, country, licence, birth) values (4, 'Ailis', 'Panyer', 'Female', 'apanyer3@reddit.com', '6470 Marquette Lane', 'China', 'No', '02/02/1984');
-insert into customers (firstname, lastname, gender, email, address, country, licence, birth) values (5, 'Dione', 'Corkell', 'Female', 'dcorkell4@pinterest.com', '9873 Annamark Lane', 'Portugal', 'No', '14/06/1961');
-insert into customers (firstname, lastname, gender, email, address, country, licence, birth) values (6, 'Johann', 'Lambrick', 'Male', 'jlambrick5@narod.ru', '90 Maywood Avenue', 'Finland', 'No', '27/12/1992');
-insert into customers (firstname, lastname, gender, email, address, country, licence, birth) values (7, 'Gale', 'Hum', 'Female', 'ghum6@youku.com', '38 Parkside Point', 'Pakistan', 'No', '25/04/1996');
-insert into customers (firstname, lastname, gender, email, address, country, licence, birth) values (8, 'Shoshana', 'Bearcock', 'Female', 'sbearcock7@bbb.org', '8032 Carpenter Street', 'China', 'Yes', '13/06/1964');
-insert into customers (firstname, lastname, gender, email, address, country, licence, birth) values (9, 'Josie', 'Garie', 'Female', 'jgarie8@slashdot.org', '189 High Crossing Court', 'France', 'Yes', '29/06/1997');
-insert into customers (firstname, lastname, gender, email, address, country, licence, birth) values (10, 'Kermy', 'Dunridge', 'Male', 'kdunridge9@seesaa.net', '91 Sutteridge Parkway', 'China', 'No', '15/04/1965');
+insert into customers (firstname, lastname, gender, email, address, country, licence, birth) values ('Brennan', 'Creany', 'Male', 'bcreany0@phpbb.com', '83 Ohio Plaza', 'France', 'Yes', '17/02/1984');
+insert into customers (firstname, lastname, gender, email, address, country, licence, birth) values ('Nathanael', 'Stickland', 'Male', 'nstickland1@github.io', '86 Florence Road', 'Russia', 'No', '25/06/1978');
+insert into customers (firstname, lastname, gender, email, address, country, licence, birth) values ('Bendick', 'Biggadyke', 'Male', 'bbiggadyke2@umn.edu', '9 Macpherson Crossing', 'Brazil', 'No', '30/08/1964');
+insert into customers (firstname, lastname, gender, email, address, country, licence, birth) values ('Ailis', 'Panyer', 'Female', 'apanyer3@reddit.com', '6470 Marquette Lane', 'China', 'No', '02/02/1984');
+insert into customers (firstname, lastname, gender, email, address, country, licence, birth) values ('Dione', 'Corkell', 'Female', 'dcorkell4@pinterest.com', '9873 Annamark Lane', 'Portugal', 'No', '14/06/1961');
+insert into customers (firstname, lastname, gender, email, address, country, licence, birth) values ('Johann', 'Lambrick', 'Male', 'jlambrick5@narod.ru', '90 Maywood Avenue', 'Finland', 'No', '27/12/1992');
+insert into customers (firstname, lastname, gender, email, address, country, licence, birth) values ('Gale', 'Hum', 'Female', 'ghum6@youku.com', '38 Parkside Point', 'Pakistan', 'No', '25/04/1996');
+insert into customers (firstname, lastname, gender, email, address, country, licence, birth) values ('Shoshana', 'Bearcock', 'Female', 'sbearcock7@bbb.org', '8032 Carpenter Street', 'China', 'Yes', '13/06/1964');
+insert into customers (firstname, lastname, gender, email, address, country, licence, birth) values ('Josie', 'Garie', 'Female', 'jgarie8@slashdot.org', '189 High Crossing Court', 'France', 'Yes', '29/06/1997');
+insert into customers (firstname, lastname, gender, email, address, country, licence, birth) values ('Kermy', 'Dunridge', 'Male', 'kdunridge9@seesaa.net', '91 Sutteridge Parkway', 'China', 'No', '15/04/1965');
 insert into customers (firstname, lastname, gender, email, address, country, licence, birth) values ('Malorie', 'Course', 'Female', 'mcoursea@cyberchimps.com', '584 Huxley Drive', 'Portugal', 'No', '01/02/1971');
 insert into customers (firstname, lastname, gender, email, address, country, licence, birth) values ('Billy', 'enzley', 'Male', 'benzleyb@cafepress.com', '6 Oak Valley Junction', 'Vietnam', 'No', '24/04/1991');
 insert into customers (firstname, lastname, gender, email, address, country, licence, birth) values ('Perren', 'Taw', 'Male', 'ptawc@livejournal.com', '4 Ohio Place', 'Burkina Faso', 'No', '26/05/1979');
