@@ -49,7 +49,7 @@ func dbConnect() *sql.DB {
 //Index page
 func Index(w http.ResponseWriter, r *http.Request) {
 	db := dbConnect()
-	rows, err := db.Query("SELECT * FROM customers ORDER BY id ASC LIMIT 10")
+	rows, err := db.Query("SELECT * FROM customers ORDER BY firstname ASC LIMIT 10")
 	if err != nil {
 		log.Println(err)
 	}
@@ -202,7 +202,7 @@ func Allcustomers(w http.ResponseWriter, r *http.Request) {
 	db := dbConnect()
 	pID := r.URL.Query().Get("id")
 	if pID == "1" {
-		rows, err := db.Query("SELECT * FROM customers ORDER BY id ASC LIMIT 20")
+		rows, err := db.Query("SELECT * FROM customers ORDER BY firstname ASC LIMIT 20")
 		if err != nil {
 			log.Println(err)
 		}
@@ -231,7 +231,7 @@ func Allcustomers(w http.ResponseWriter, r *http.Request) {
 		defer db.Close()
 	}
 	if pID == "2" {
-		rows, err := db.Query("SELECT * FROM customers ORDER BY id ASC LIMIT 20 OFFSET 20")
+		rows, err := db.Query("SELECT * FROM customers ORDER BY firstname ASC LIMIT 20 OFFSET 20")
 		if err != nil {
 			log.Println(err)
 		}
@@ -260,7 +260,7 @@ func Allcustomers(w http.ResponseWriter, r *http.Request) {
 		defer db.Close()
 	}
 	if pID == "3" {
-		rows, err := db.Query("SELECT * FROM customers ORDER BY id ASC LIMIT 20 OFFSET 40")
+		rows, err := db.Query("SELECT * FROM customers ORDER BY firstname ASC LIMIT 20 OFFSET 40")
 		if err != nil {
 			log.Println(err)
 		}
@@ -289,7 +289,7 @@ func Allcustomers(w http.ResponseWriter, r *http.Request) {
 		defer db.Close()
 	}
 	if pID == "4" {
-		rows, err := db.Query("SELECT * FROM customers ORDER BY id ASC LIMIT 20 OFFSET 60")
+		rows, err := db.Query("SELECT * FROM customers ORDER BY firstname ASC LIMIT 20 OFFSET 60")
 		if err != nil {
 			log.Println(err)
 		}
@@ -318,7 +318,7 @@ func Allcustomers(w http.ResponseWriter, r *http.Request) {
 		defer db.Close()
 	}
 	if pID == "5" {
-		rows, err := db.Query("SELECT * FROM customers ORDER BY id ASC LIMIT 20 OFFSET 80")
+		rows, err := db.Query("SELECT * FROM customers ORDER BY firstname ASC LIMIT 20 OFFSET 80")
 		if err != nil {
 			log.Println(err)
 		}
